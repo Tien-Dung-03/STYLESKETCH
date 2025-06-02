@@ -82,6 +82,10 @@ The PairImageFolder class in dataloader.py will load images from these folders, 
   git clone <https://github.com/Tien-Dung-03/STYLESKETCH.git>
   cd <STYLESKETCH>
   ```
+- Create checkpoints folder and load pre-trained model here:
+  ```
+  https://drive.google.com/file/d/1arP9tgVzk5S2eazg_KnxGCErgKt7YIkN/view?usp=drive_link
+  ```
 
 ### 2. Configure Training
 Edit `train.py` or pass arguments via command line to configure:
