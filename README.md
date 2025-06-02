@@ -39,15 +39,19 @@ The project uses PyTorch and includes scripts for data preparation, training, an
 The dataset is hosted on Google Drive, containing color images organized by style folders (e.g., style1, style2).
 
 1. Install gdown:
+``` bash
 pip install gdown
+```
 
 2. Download and unzip:
+``` bash
 gdown <https://drive.google.com/drive/folders/1jYsOWDKwuW77aeh9eDjlmZPAPvjnuk75?usp=drive_link> -O images.zip
 unzip images.zip -d images
+```
 
 ### 2. Directory Structure
 After unzipping, the dataset should have the following structure:
-
+```
 images/
 ├── style1/
 │   ├── image1.png
@@ -60,7 +64,7 @@ images/
 │   ├── image3.png
 │   └── ...
 ├── ...
-
+```
 Each style{i} folder contains color images (PNG or JPEG) for a specific style.
 
 The PairImageFolder class in dataloader.py will load images from these folders, generate sketches using Color2Sketch, and extract color palettes using color_cluster.
@@ -75,25 +79,25 @@ The PairImageFolder class in dataloader.py will load images from these folders, 
 ### 1. Setup
 - Clone the repository:
   ```bash
-  git clone <repository_url>
-  cd <repository_name>
+  git clone <https://github.com/Tien-Dung-03/STYLESKETCH.git>
+  cd <STYLESKETCH>
   ```
 
 ### 2. Configure Training
 Edit `train.py` or pass arguments via command line to configure:
-`--data_dir`: Path to dataset (e.g., "images/")
-`--batch_size`: Default=4
-`--epochs`: Default=100
-`--lr`: Default=0.0002
-`--nclusters`: Default=9
-`--num_workers`: Default=4
-`--save_interval`: Default=10
-`--eval_interval`: Default=5, Number of epochs between evaluations
-`--resume`: Path to checkpoint to resume from (e.g., "checkpoints/checkpoint_epoch_20.pth")
-`--train_ratio`: Default=0.8, Ratio of training data
-`--random_style`: action='store_true', Use random style codes
-`--seed`: Default=42, Random seed for reproducibility
-`--pin_memory`: Use pin memory in DataLoader
+- `--data_dir`: Path to dataset (e.g., "images/")
+- `--batch_size`: Default=4
+- `--epochs`: Default=100
+- `--lr`: Default=0.0002
+- `--nclusters`: Default=9
+- `--num_workers`: Default=4
+- `--save_interval`: Default=10
+- `--eval_interval`: Default=5, Number of epochs between evaluations
+- `--resume`: Path to checkpoint to resume from (e.g., "checkpoints/checkpoint_epoch_20.pth")
+- `--train_ratio`: Default=0.8, Ratio of training data
+- `--random_style`: action='store_true', Use random style codes
+- `--seed`: Default=42, Random seed for reproducibility
+- `--pin_memory`: Use pin memory in DataLoader
 
 ### 3. Run Training
 Run the training script:
